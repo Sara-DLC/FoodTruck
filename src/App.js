@@ -5,6 +5,7 @@ import RegisterForm from './components/RegisterForm'
 import CustomerPage from './components/CustomerPage';
 import Menu from './components/Menu';
 import { Route } from 'react-router-dom';
+import VendorPage from './components/VendorPage';
 
 
 
@@ -16,8 +17,9 @@ function App() {
    <h2>Food Truck Trackr</h2>
    
       <Route exact path ='/' component={UserForm}/>
-      <Route exact path ="/Register" component={RegisterForm}/>
+      <Route exact path ="/register" component={RegisterForm}/>
       <Route exact path = '/user' component={CustomerPage} />
+      <Route exact path = '/vendor' component={VendorPage} />
       <Route exact path = '/menu' component={Menu} />
     
     
