@@ -36,17 +36,17 @@ const UserForm = ({errors, touched, values, status}) => {
             <p className="error">{errors.password}</p>
             )}
 
-       
-        <Button className ='sign-In' type="submit" fullWidth variant='contained' color="primary">
+       <label className ='sign-In'>
+        <Button  type="submit" fullWidth variant='contained' size='medium' color="primary">
             Sign In 
         </Button>
          
-        <Grid item className='sign-In'>
+        <Grid item >
               <Link to='/Register' variant='body2'>
                 {`Don't have an account? Sign Up`}
               </Link>
             </Grid>
-
+            </label>
         </Form>
 
 <label>

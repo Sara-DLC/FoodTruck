@@ -11,7 +11,8 @@ function App() {
   return (
     <div className='App'>
    
-      <h2 className>FoodTruck Trackr</h2>
+   <h2>Food Truck Trackr</h2>
+   
       <Route exact path ='/Login' component={UserForm}/>
       <Route exact path ="/Register" component={RegisterForm}/>
     

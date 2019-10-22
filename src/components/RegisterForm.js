@@ -51,7 +51,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
             </Field>
             {touched.options && errors.options && <p className="error">{errors.options}</p>}
 
-       
+       <label className ='sign-In'>
         <Button type="submit" fullWidth variant="contained" color="primary">
             Register
         </Button>
@@ -61,7 +61,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
                 {"Already have an account? Login"}
               </Link>
             </Grid>
-
+            </label>
         </Form>
 
 <label>
