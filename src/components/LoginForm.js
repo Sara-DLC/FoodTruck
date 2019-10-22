@@ -7,7 +7,7 @@ import axios from "axios";
 import * as Yup from "yup";
 
 
-const UserForm = ({errors, touched, values, status}) => {
+const UserForm = ({errors, touched, status}) => {
 
     const [userName, setUserName] = useState([]);
 
@@ -54,7 +54,7 @@ const UserForm = ({errors, touched, values, status}) => {
     {userName.map(memberId =>(
         <div key= {userName.Id}>
             <p> Username: {memberId.user}</p>
-            <p> Email: {memberId.email}</p> 
+            <p> Password: {memberId.password}</p> 
         </div>
     ))}
     
@@ -68,12 +68,10 @@ const UserForm = ({errors, touched, values, status}) => {
 
 const FormikUserForm = withFormik({
  
-    mapPropsToValues({user, email, password, options}) {
+    mapPropsToValues({user,password}) {
       return {
         user: user || "",
-        email: email || "",
         password: password || "",
-        options: options || ""
       };
     },
   
@@ -81,14 +79,14 @@ const FormikUserForm = withFormik({
 
     validationSchema: Yup.object().shape({
       user: Yup.string().required(),
-      email: Yup.string().required(),
-     options: Yup.string().notOneOf(["Option Required"]).required()
+ 
     }),
 
   
 
 
     handleSubmit(values, { setStatus, resetForm }) {
+      debugger
       axios
         .post("https://reqres.in/api/users/", values)
         .then(response => {
