@@ -6,7 +6,7 @@ import RegisterForm from './components/RegisterForm';
 import Favorites from './components/Favorites';
 import Menu from './components/Menu';
 import VendorPage from './components/VendorPage';
-// import SearchPage from './components/SearchPage';
+import SearchPage from './components/SearchPage';
 
 
 
@@ -21,7 +21,7 @@ function App() {
       <Route exact path ="/register" component={RegisterForm}/>
       <Route exact path = '/favorites' component={Favorites} />
       {/* needs remove and menu buttons and 'add rating component'*/}
-      {/* <Route exact path = '/truck-search' component={SearchPage} /> */}
+      <Route exact path = '/truck-search' component={SearchPage} />
       {/* needs 'add to favorites' and menu buttons 'add rating component'*/}
       <Route exact path = '/trucks' component={VendorPage} />
       {/* create button on top of page */}

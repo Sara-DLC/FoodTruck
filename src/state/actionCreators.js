@@ -34,6 +34,10 @@ export const getTrucks = () => dispatch => {
     })
 }
 
+export const searchTrucks = (formValues) => dispatch => {
+    return null;
+}
+
 
 export const addMenu = (menu) => {
     return {
