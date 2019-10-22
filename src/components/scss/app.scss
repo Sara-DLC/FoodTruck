@@ -1,0 +1,52 @@
+.App {
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  
+  .main{
+    display:flex;
+    justify-content: center; 
+    width: 90vw;
+    min-height: 80vh;
+  
+  }
+  
+  .user-field {
+      display: flex;
+      width: 150%;
+      margin: 20px;
+      height: 2vh;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+  }
+  
+  .dropdown{
+    width: 158%;
+      margin-left: 20px;
+      height: 35px;
+      margin-bottom: 9%;
+      font-size: 1rem;
+    }
+  
+  h2 {
+    color: black;
+    margin-top: 10%;
+  }
+  
+  .sign-In {
+   display:flex;
+   flex-direction: column;
+  margin-left: 35%;
+  width: 100%;
+  
+  }
+  
+  
+  
+  

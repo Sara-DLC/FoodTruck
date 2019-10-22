@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
+import '../src/components/scss/app.scss';
 import UserForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import Favorites from './components/Favorites';
