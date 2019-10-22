@@ -104,7 +104,9 @@ const FormikRegisterForm = withFormik({
 
 
     handleSubmit(values, { setStatus, resetForm }) {
+      debugger
       axios
+
         .post("https://reqres.in/api/users/", values)
         .then(response => {
           setStatus(response.data);
