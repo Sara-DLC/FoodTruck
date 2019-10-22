@@ -7,9 +7,9 @@ const Menu = (props) => {
 
     const id = props.match.params.id;
 
-    useEffect(()=>{
-        getMenu(id);
-    },[])
+    // useEffect(()=>{
+    //     getMenu(id);
+    // },[])
 
     return (
         <div className='menu-page'>

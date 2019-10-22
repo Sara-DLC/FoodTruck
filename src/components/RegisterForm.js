@@ -114,7 +114,7 @@ const FormikRegisterForm = withFormik({
         .then(response => {
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('user', response.data.user.id);
-          props.history.push("/vendor")
+          props.history.push("/trucks")
           resetForm();
         })
         .catch(error => {

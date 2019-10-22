@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
 
-const CustomerPage = (props) => {
+const Favorites = (props) => {
 
     const {getFavorites, trucks} = props;
 
-    useEffect(()=>{
-        getFavorites();
-    },[]);
+    // useEffect(()=>{
+    //     getFavorites();
+    // },[]);
 
     return (
         <div className='favorite-trucks'>
             {trucks.map(item => (
-                <Truck truck={item} />
+                <Truck truck={item} buttonText='Remove'/>
             ))}
         </div>
     )
@@ -23,4 +23,4 @@ const CustomerPage = (props) => {
 export default connect(
     state => state,
     actionCreators
-)(CustomerPage);
+)(Favorites);
