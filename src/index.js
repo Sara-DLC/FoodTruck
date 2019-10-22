@@ -11,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
     trucks: reducers.trucksReducer,
-    favorites: reducers.favoritesReducer
+    menu: reducers.menuReducer
 })
 
 const store = createStore(rootReducer,

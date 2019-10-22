@@ -1,12 +1,12 @@
 import * as types from './actionTypes';
 import axiosWithAuth from '../axios';
 
-const baseUrl = ''
+const baseUrl = '';
 
-export const addFavorites = (favorites) => {
+export const addTrucks = (trucks) => {
     return {
         type: types.ADD_FAVORITES,
-        payload: favorites
+        payload: trucks
     }
 }
 
@@ -15,7 +15,7 @@ export const getFavorites = () => dispatch => {
 
     axiosWithAuth().get(baseUrl + `/user/${userId}`)
     .then(res => {
-        dispatch(addFavorites(res.favoritetrucks))
+        dispatch(addTrucks(res.favoritetrucks))
     })
     .catch(err => {
         alert(err.message)

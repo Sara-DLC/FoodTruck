@@ -5,7 +5,7 @@ import Truck from './Truck';
 
 const CustomerPage = (props) => {
 
-    const {getFavorites, favorites} = props;
+    const {getFavorites, trucks} = props;
 
     useEffect(()=>{
         getFavorites();
@@ -13,7 +13,7 @@ const CustomerPage = (props) => {
 
     return (
         <div className='favorite-trucks'>
-            {favorites.map(item => (
+            {trucks.map(item => (
                 <Truck truck={item} />
             ))}
         </div>
