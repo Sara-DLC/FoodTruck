@@ -7,7 +7,7 @@ import axios from "axios";
 import * as Yup from "yup";
 
 
-const UserForm = ({errors, touched, values, status}) => {
+const RegisterForm = ({errors, touched, values, status}) => {
 
     const [userName, setUserName] = useState([]);
 
@@ -30,20 +30,35 @@ const UserForm = ({errors, touched, values, status}) => {
             <p className="error">{errors.user}</p>
             )}
             
+        
+    
+            <Field className="user-field" type="text"name="email" placeholder="Email"/>
+            {touched.email && errors.email && (
+            <p className="error">{errors.email}</p>
+            )}
+
       
-            <Field className="user-field" type='password'name='password'placeholder='Password'/>
+            <Field className="user-field" type="password"name="password" placeholder="Password"/>
             {touched.password && errors.password && (
             <p className="error">{errors.password}</p>
             )}
 
+            <Field className="dropdown" component="select" name="options" >
+                <option>Please Choose an Option</option>
+                <option value="Vendor">Vendor</option>
+              <option value="Customer">Customer</option> 
+              
+            </Field>
+            {touched.options && errors.options && <p className="error">{errors.options}</p>}
+
        
-        <Button className ='sign-In' type="submit" fullWidth variant='contained' color="primary">
-            Sign In 
+        <Button type="submit" fullWidth variant="contained" color="primary">
+            Register
         </Button>
          
-        <Grid item className='sign-In'>
-              <Link to='/Register' variant='body2'>
-                {`Don't have an account? Sign Up`}
+        <Grid item>
+              <Link to="/Login" variant="body2">
+                {"Already have an account? Login"}
               </Link>
             </Grid>
 
@@ -66,7 +81,7 @@ const UserForm = ({errors, touched, values, status}) => {
 }
 
 
-const FormikUserForm = withFormik({
+const FormikRegisterForm = withFormik({
  
     mapPropsToValues({user, email, password, options}) {
       return {
@@ -98,8 +113,8 @@ const FormikUserForm = withFormik({
         })
         .catch(error => console.log(error.response));
     }
-  })(UserForm); 
+  })(RegisterForm); 
 
 
 
-export default FormikUserForm;
+export default FormikRegisterForm;
