@@ -16,6 +16,7 @@ const VendorPage = (props) => {
         <div className='vendor-page'>
             <button>Create Truck</button>
             <div className='favorite-trucks'>
+            <h2>FoodTruck TrackR</h2>
                 {trucks.map(truck => (
                     <div className='truck'>
                     <div className='truck-image'>

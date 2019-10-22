@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actionCreators from '../state/actionCreators';
-import './scss/Truck.scss';
+import './scss/truck.scss';
 
 const Truck = (props) => {
     const {truck, buttonText} = props;

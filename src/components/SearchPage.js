@@ -15,6 +15,7 @@ const SearchPage = (props) => {
 
     return (
         <div className='search-page'>
+          <h2>FoodTruck TrackR</h2>
             <Formik 
             initialValues={{
                 options: '',

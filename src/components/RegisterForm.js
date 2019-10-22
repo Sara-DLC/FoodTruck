@@ -18,10 +18,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
 
 
     return (
-    <div className="main">
-
-       
-        
+    <div className="main">   
         <Form>
         
             <Field className="user-field" ype="text"name="user" placeholder="Username"/>
