@@ -5,7 +5,7 @@ const baseUrl = '';
 
 export const addTrucks = (trucks) => {
     return {
-        type: types.ADD_FAVORITES,
+        type: types.ADD_TRUCKS,
         payload: trucks
     }
 }
@@ -15,7 +15,7 @@ export const getFavorites = () => dispatch => {
 
     axiosWithAuth().get(baseUrl + `/user/${userId}`)
     .then(res => {
-        dispatch(addTrucks(res.favoritetrucks))
+        dispatch(addTrucks(res.data.favoritetrucks))
     })
     .catch(err => {
         alert(err.message)
