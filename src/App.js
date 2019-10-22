@@ -13,7 +13,7 @@ function App() {
    
    <h2>Food Truck Trackr</h2>
    
-      <Route exact path ='/Login' component={UserForm}/>
+      <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/Register" component={RegisterForm}/>
     
     
