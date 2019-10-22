@@ -1,6 +1,5 @@
 import * as types from './actionTypes';
 import axiosWithAuth from '../axios';
-
 const baseUrl = '';
 
 export const addTrucks = (trucks) => {
@@ -21,6 +20,19 @@ export const getFavorites = () => dispatch => {
         alert(err.message)
     })
 }
+
+export const getTrucks = () => dispatch => {
+    const vendorId = localStorage.getItem('vendor')
+
+    axiosWithAuth().get(baseUrl + `/vendor/${vendorId}`)
+    .then(res => {
+        dispatch(addTrucks(res.data.ownedtrucks))
+    })
+    .catch(err => {
+        alert(err.message)
+    })
+}
+
 
 export const addMenu = (menu) => {
     return {

@@ -57,7 +57,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
         </Button>
          
         <Grid item>
-              <Link to="/Login" variant="body2">
+              <Link to="/" variant="body2">
                 {"Already have an account? Login"}
               </Link>
             </Grid>
