@@ -42,14 +42,14 @@ const UserForm = ({errors, touched, status}) => {
         </Button>
          
         <Grid item >
-              <Link to='/Register' variant='body2'>
+              <Link to='/register' variant='body2'>
                 {`Don't have an account? Sign Up`}
               </Link>
             </Grid>
             </label>
         </Form>
 
-<label>
+{/* <label>
 
     {userName.map(memberId =>(
         <div key= {userName.Id}>
@@ -58,7 +58,7 @@ const UserForm = ({errors, touched, status}) => {
         </div>
     ))}
     
-    </label>
+    </label> */}
     </div>
   
 
@@ -85,14 +85,18 @@ const FormikUserForm = withFormik({
   
 
 
-    handleSubmit(values, { setStatus, resetForm }) {
-      debugger
+    handleSubmit(values, { props, resetForm }) {
+      const params ={
+        username: values.user,
+        password: values.password
+      }
       axios
-        .post("https://reqres.in/api/users/", values)
+        .post("https://food-truck-finder-rj.herokuapp.com/api/login", params)
         .then(response => {
-          setStatus(response.data);
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('user', response.data.user.id);
+          props.history.push("/vendor")
           resetForm();
-          console.log(response);
         })
         .catch(error => console.log(error.response));
     }

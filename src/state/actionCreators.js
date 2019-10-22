@@ -1,6 +1,7 @@
 import * as types from './actionTypes';
 import axiosWithAuth from '../axios';
-const baseUrl = '';
+
+const baseUrl = 'https://food-truck-finder-rj.herokuapp.com/api';
 
 export const addTrucks = (trucks) => {
     return {
@@ -22,11 +23,11 @@ export const getFavorites = () => dispatch => {
 }
 
 export const getTrucks = () => dispatch => {
-    const vendorId = localStorage.getItem('vendor')
+    const userId = localStorage.getItem('user')
 
-    axiosWithAuth().get(baseUrl + `/vendor/${vendorId}`)
+    axiosWithAuth().get(baseUrl + `/vendor/${userId}`)
     .then(res => {
-        dispatch(addTrucks(res.data.ownedtrucks))
+        dispatch(addTrucks(res.data.trucksOwned))
     })
     .catch(err => {
         alert(err.message)

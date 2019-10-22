@@ -8,7 +8,6 @@ import * as Yup from "yup";
 
 
 const RegisterForm = ({errors, touched, values, status}) => {
-
     const [userName, setUserName] = useState([]);
 
     
@@ -103,17 +102,24 @@ const FormikRegisterForm = withFormik({
   
 
 
-    handleSubmit(values, { setStatus, resetForm }) {
-      debugger
+    handleSubmit(values, {props, resetForm }) {
+      const params = {
+        username: values.user,
+        password: values.password,
+        email: values.email
+      }
       axios
 
-        .post("https://reqres.in/api/users/", values)
+        .post("https://food-truck-finder-rj.herokuapp.com/api/register", params)
         .then(response => {
-          setStatus(response.data);
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('user', response.data.user.id);
+          props.history.push("/vendor")
           resetForm();
-          console.log(response);
         })
-        .catch(error => console.log(error.response));
+        .catch(error => {
+          alert(error.message)
+        });
     }
   })(RegisterForm); 
 
