@@ -2,40 +2,49 @@ import * as types from './actionTypes';
 
 const initialTrucks = [{
     id: 1,
-    image: '',
+    imageOfTruck: '',
     cuisineType: 'Chinese',
     customerRatingAvg: 5,
+    menu: [],
     currentLocation: {
-        location: 'here'
+        location: 'route 1',
+        departureTime: '4.00pm',
     },
     nextLocation: {
-        location: 'there'
+        location: 'route 54',
+        departureTime: '6.00pm',
+        arrivalTime: '5.00pm',
     }
 },
 {
     id:2,
-    image: '',
+    imageOfTruck: '',
     cuisineType: 'Pizza',
     customerRatingAvg: 3,
     currentLocation: {
-        location: 'here'
+        location: 'route 19',
+        departureTime: '10.00pm',
     },
     nextLocation: {
-        location: 'there'
+        location: 'route 4',
+        departureTime: '12.00am',
+        arrivalTime: '11.00pm',
     }
 }];
 
 const initialMenu = [{
     itemName: 'Something',
+    itemPhotos: [],
     itemDescription: 'tastes good',
     customerRatingAvg: 3,
     itemPrice: 20
 },
 {
     itemName: 'good thing',
+    itemPhotos: [],
     itemDescription: 'tastes kinda good',
-    customerRatingAvg: 3,
-    itemPrice: 20
+    customerRatingAvg: 5,
+    itemPrice: 200
 }];
 
 export const trucksReducer = (state = initialTrucks, action) => {
