@@ -1,0 +1,18 @@
+.truck {
+    display:flex;
+    width: 90vw;
+    background-color: white;
+    border: 1px solid black;
+
+    .truck-image {
+        width: 25%;
+    }
+
+    .truck-info {
+        width: 60%;
+    }
+
+    .truck-button {
+        width: 15%;
+    }
+}

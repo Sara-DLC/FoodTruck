@@ -10,7 +10,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
-    trucks: reducers.trucksReducer
+    trucks: reducers.trucksReducer,
+    menu: reducers.menuReducer
 })
 
 const store = createStore(rootReducer,
