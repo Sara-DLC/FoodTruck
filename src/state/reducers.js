@@ -1,8 +1,10 @@
 import * as types from './actionTypes';
 
-const initialTrucks = []
+const initialTrucks = [];
 
-const initialFavorites = []
+const initialFavorites = [];
+
+const initialMenu = [];
 
 export const trucksReducer = (state = initialTrucks, action) => {
     switch(action.type){
@@ -17,5 +19,14 @@ export const favoritesReducer = (state = initialFavorites, action) => {
             return action.payload;
         default:
             return state;
+    }
+}
+
+export const menuReducer = (state = initialMenu, action) => {
+    switch(action.type){
+        case types.ADD_MENU:
+            return action.payload;
+        default:
+            return state
     }
 }

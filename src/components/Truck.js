@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as actionCreators from '../state/actionCreators';
 import './scss/Truck.scss';
 
@@ -18,7 +19,7 @@ const Truck = (props) => {
                 <p>Next Location: {truck.nextLocation.location}</p>
             </div>
             <div className='truck-button'>
-                <button>Generic</button>
+                <button><Link to={`/trucks/${truck.id}`}>Menu</Link></button>
                 <button>Generic2</button>
             </div>
         </div>

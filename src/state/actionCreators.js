@@ -21,3 +21,20 @@ export const getFavorites = () => dispatch => {
         alert(err.message)
     })
 }
+
+export const addMenu = (menu) => {
+    return {
+        type: types.ADD_MENU,
+        payload: menu
+    }
+}
+
+export const getMenu = (id) => dispatch => {
+    axiosWithAuth().get(baseUrl + `/truck/${id}`)
+    .then(res => {
+        dispatch(addMenu(res.data.menu))
+    })
+    .catch(err => {
+        alert(err.message)
+    })
+}
