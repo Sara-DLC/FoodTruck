@@ -90,12 +90,15 @@ const FormikUserForm = withFormik({
         username: values.user,
         password: values.password
       }
+
+      props.history.push("/trucks")
+
       axios
         .post("https://food-truck-finder-rj.herokuapp.com/api/login", params)
         .then(response => {
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('user', response.data.user.id);
-          props.history.push("/vendor")
+          props.history.push("/trucks")
           resetForm();
         })
         .catch(error => console.log(error.response));

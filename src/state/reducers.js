@@ -1,6 +1,7 @@
 import * as types from './actionTypes';
 
 const initialTrucks = [{
+    id: 1,
     image: '',
     cuisineType: 'Chinese',
     customerRatingAvg: 5,
@@ -12,6 +13,7 @@ const initialTrucks = [{
     }
 },
 {
+    id:2,
     image: '',
     cuisineType: 'Pizza',
     customerRatingAvg: 3,
