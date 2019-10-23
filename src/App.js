@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
+import '../src/components/scss/app.scss';
 import UserForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import Favorites from './components/Favorites';
@@ -10,13 +10,16 @@ import SearchPage from './components/SearchPage';
 
 
 
-
 function App() {
+  // const [savedList, setSavedList] = useState( [] );
+
+  // const addToSavedList = fav => {
+  //   setSavedList( [...savedList, fav] );
+  // };
+
   return (
     <div className='App'>
-   
-   <h2>Food Truck Trackr</h2>
-   
+
       <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/register" component={RegisterForm}/>
       <Route exact path = '/favorites' component={Favorites} />
@@ -27,13 +30,17 @@ function App() {
       {/* create button on top of page */}
       {/* needs edit and delete buttons */}
       <Route exact path = '/trucks/:id/menu' component={Menu} />
+
+      {/* <Route path ='/favorites/:id' render={(props => <Favorites addToSavedList={addToSavedList} {...props} list={savedList}/>)}/>   */}
     
-    
-       
-     
     </div>
   
   );
 }
 
 export default App;
+
+
+
+
+

@@ -1,0 +1,56 @@
+.App {
+  display:flex;
+  flex-direction: column;
+  justify-content: center; 
+  width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  // background-color: rgb(235, 199, 41);
+  }
+  
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20vw;
+    margin-bottom: 17%;
+    margin-left: 8%;
+  }
+  
+  .user-field {
+    display: flex;
+    width: 113%;
+    margin: 20px;
+    margin-left: 26%;
+    height: 2vh;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .option{
+    width: 122%;
+    margin-left: 73px;
+    height: 35px;
+    margin-bottom: 9%;
+    font-size: 1rem;
+    }
+  
+ 
+  
+  .sign-In {
+   display:flex;
+   flex-direction: column;
+  margin-left: 35%;
+  width: 100%;
+  
+  }
+  
+  h1{
+    text-align: center;
+    margin-left: 33%;
+    padding: 0;
+    width: 100%;
+  }
+  
+  

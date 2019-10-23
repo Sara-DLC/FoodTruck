@@ -19,9 +19,9 @@ const UserForm = ({errors, touched, status}) => {
 
 
     return (
+      
     <div className="main">
-
-       
+         <h1>FoodTruck TrackR</h1>
         
         <Form>
         

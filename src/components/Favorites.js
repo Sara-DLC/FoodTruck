@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
+import NavigationCard from './NavigationCard';
 import Truck from './Truck';
 
 const Favorites = (props) => {
@@ -13,11 +14,17 @@ const Favorites = (props) => {
 
     return (
         <div className='favorite-trucks'>
-            {trucks.map(item => (
-                <Truck truck={item} buttonText='Remove'/>
+            <NavigationCard/>
+            {trucks.map(item => ( 
+                <Truck truck={item} buttonText='Remove' className="fav-btn"/> 
             ))}
+
+
         </div>
+       
     )
+
+    
 }
 
 export default connect(

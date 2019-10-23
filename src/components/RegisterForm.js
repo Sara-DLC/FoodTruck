@@ -18,10 +18,8 @@ const RegisterForm = ({errors, touched, values, status}) => {
 
 
     return (
-    <div className="main">
-
-       
-        
+    <div className="main">  
+    <h1>FoodTruck TrackR</h1> 
         <Form>
         
             <Field className="user-field" ype="text"name="user" placeholder="Username"/>
@@ -42,7 +40,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
             <p className="error">{errors.password}</p>
             )}
 
-            <Field className="dropdown" component="select" name="options" >
+            <Field className="option" component="select" name="options" >
                 <option>Please Choose an Option</option>
                 <option value="Vendor">Vendor</option>
               <option value="Customer">Customer</option> 
