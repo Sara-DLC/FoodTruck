@@ -1,28 +1,29 @@
 import React from 'react';
 import './scss/navigation.scss';
-
+import {Link} from 'react-router-dom';
+import logo from '../img/logo-2.png';
 
 const Nav =({home, search, features, about, login, register}) =>{
  
     return(
      
-      <div >
+      <header className='header-section' >
+          <img src={logo} alt="FoodTruck Trackr Logo"/>
         <nav className="nav-bar">
-          <ul className="menu-right">
-            <li>
-              <a href="/" alt="home">HOME{home}</a>
-              <a href="/truck-search" alt="search">SEARCH{search}</a>
-              <a href="/" alt="features">FEATURES{features}</a>
-              <a href="/" alt="about">ABOUT {about}</a>
-              <a href="/" alt="login">LOGIN{login}</a>
-              <a href="/register" alt="register">REGISTER{register}</a>
-            </li>
-          </ul>
+              <Link to='/favorites'>HOME{home}</Link>
+              <Link to='/'>FEATURES{features}</Link>
+              <Link to='truck-search'>SEARCH{search}</Link>
+              <Link to='/'>FEATURES{features}</Link>
+              <Link to='/'>ABOUT {about}</Link>
+              <Link to='/'>LOGIN{login}</Link>
+              <Link to='/register'>REGISTER{register}</Link>
           </nav>
-      </div>
+
+      </header>
   
     );
 
 }
+
 
 export default Nav;

@@ -7,18 +7,16 @@ import Favorites from './components/Favorites';
 import Menu from './components/Menu';
 import VendorPage from './components/VendorPage';
 import SearchPage from './components/SearchPage';
+import NavigationCard from '../src/components/NavigationCard';
 
 
 
 function App() {
-  // const [savedList, setSavedList] = useState( [] );
-
-  // const addToSavedList = fav => {
-  //   setSavedList( [...savedList, fav] );
-  // };
+ 
 
   return (
-    <div className='App'>
+    <div>
+       <NavigationCard/>
 
       <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/register" component={RegisterForm}/>
@@ -31,7 +29,6 @@ function App() {
       {/* needs edit and delete buttons */}
       <Route exact path = '/trucks/:id/menu' component={Menu} />
 
-      {/* <Route path ='/favorites/:id' render={(props => <Favorites addToSavedList={addToSavedList} {...props} list={savedList}/>)}/>   */}
     
     </div>
   

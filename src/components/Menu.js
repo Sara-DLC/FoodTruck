@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
-import NavigationCard from './NavigationCard';
 import './scss/Menu.scss';
 
 const Menu = (props) => {
@@ -15,7 +14,6 @@ const Menu = (props) => {
 
     return (
         <div className='menu-page'>
-            <NavigationCard />
             {menu?
             menu.map(item => (
                 <div className='menu-items'>

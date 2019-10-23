@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Formik, Field, Form} from 'formik';
-import NavigationCard from './NavigationCard'
 import '../components/scss/searchpage.scss';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
@@ -17,7 +16,7 @@ const SearchPage = (props) => {
 
     return (
         <div className='search-page'>
-          <NavigationCard/>
+      
             <Formik 
             initialValues={{
                 options: '',

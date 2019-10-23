@@ -9,11 +9,16 @@
   
   .main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 20vw;
-    margin-bottom: 17%;
-    margin-left: 8%;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    width: 100vw;
+
+    .login-form{
+      width: 50vw;
+    }
+     img{
+       width: 50vw;
+     }
   }
   
   .user-field {
@@ -45,11 +50,6 @@
   
   }
   
-  h1{
-    text-align: center;
-    margin-left: 33%;
-    padding: 0;
-    width: 100%;
-  }
+ 
   
   
