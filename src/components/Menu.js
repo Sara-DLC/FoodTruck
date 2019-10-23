@@ -15,7 +15,7 @@ const Menu = (props) => {
 
     return (
         <div className='menu-page'>
-            <NavigationCard/>
+            <NavigationCard />
             {menu?
             menu.map(item => (
                 <div className='menu-items'>

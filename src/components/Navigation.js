@@ -1,34 +1,16 @@
 import React, { Component } from 'react';
 import '../components/scss/navigation.scss';
+import NavigationCard from './NavigationCard';
 
 
 class Navigation extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            showForm: false
-        };
-    }
-
-    showForm() {
-        this.setState({
-            showForm: !this.state.showForm
-        });
-    }
-
+  
     render() {
-        let searchForm = this.state.showForm ? (
-            <form className="menu__search-form" method="POST">
-                <input className="menu__search-input" placeholder="Type and hit enter" />
-            </form>
-        ) : '';
-
-        let linksMarkup = this.props.links.map((link, index) => {
+            let linksMarkup = this.props.links.map((link, index) => {
             let linkMarkup = link.active ? (
-                <a className="menu__link menu__link--active" href={link.link}>{link.label}</a>
+                <a className="link" href={link.link}>{link.label}</a>
             ) : (
-                <a className="menu__link" href={link.link}>{link.label}</a>
+                <a className="link" href={link.link}>{link.label}</a>
             );
 
             return (
@@ -39,19 +21,14 @@ class Navigation extends Component {
         });
 
         return (
-            <nav className="menu">
-                <h1 style={{
-                backgroundImage: 'url(' + this.props.logo + ')'
-                }} className="menu__logo">FoodTruck TrackR</h1>
-
-                <div className="menu__right">
-                    <ul className="menu__list">
-                        {linksMarkup}
+           
+            <nav className="nav-bar">
+                
+                <div className="menu-right">
+                
+                    <ul>
+                    <NavigationCard/>   {linksMarkup}
                     </ul>
-
-                 
-
-                    {searchForm} 
                 </div>
             </nav>
         );
@@ -59,3 +36,7 @@ class Navigation extends Component {
 }
 
 export default Navigation;
+
+
+
+
