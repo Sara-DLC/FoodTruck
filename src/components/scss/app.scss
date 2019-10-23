@@ -9,28 +9,31 @@
   }
   
   .main{
-    display:flex;
-  justify-content: center; 
-  width: 90vw;
-  min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20vw;
+    margin-bottom: 17%;
+    margin-left: 8%;
   }
   
   .user-field {
-      display: flex;
-      width: 150%;
-      margin: 20px;
-      height: 2vh;
-      border-radius: 8px;
-      padding: 10px;
-      font-size: 1rem;
+    display: flex;
+    width: 113%;
+    margin: 20px;
+    margin-left: 26%;
+    height: 2vh;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
   }
   
-  .dropdown{
-    width: 158%;
-      margin-left: 20px;
-      height: 35px;
-      margin-bottom: 9%;
-      font-size: 1rem;
+  .option{
+    width: 122%;
+    margin-left: 73px;
+    height: 35px;
+    margin-bottom: 9%;
+    font-size: 1rem;
     }
   
  
@@ -43,6 +46,11 @@
   
   }
   
-  
+  h1{
+    text-align: center;
+    margin-left: 33%;
+    padding: 0;
+    width: 100%;
+  }
   
   
