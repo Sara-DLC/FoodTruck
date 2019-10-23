@@ -5,9 +5,9 @@ import logo from '../img/logo.png';
 class Nav extends Component {
   render() {
     let links = [
-      { label: 'Home', link: '#home', active: true },
-      { label: 'Favorites', link: '#favorites' },
-      { label: 'Search', link: '#search' },
+      { label: 'Home', link: '/favorites', active: true },
+      { label: 'Search', link: '/truck-search' },
+      { label: 'Sign Out', link: '/' },
     ];
 
     return (

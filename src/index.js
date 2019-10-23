@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
 import thunk from 'redux-thunk';
 import * as reducers from './state/reducers';
-import '../src/components/scss/index.scss';
+import '../src/components/scss/global.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

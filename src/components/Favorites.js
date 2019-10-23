@@ -15,11 +15,16 @@ const Favorites = (props) => {
     return (
         <div className='favorite-trucks'>
             <NavigationCard/>
-            {trucks.map(item => (
-                <Truck truck={item} buttonText='Remove'/>  
+            {trucks.map(item => ( 
+                <Truck truck={item} buttonText='Remove' className="fav-btn"/> 
             ))}
+
+
         </div>
+       
     )
+
+    
 }
 
 export default connect(

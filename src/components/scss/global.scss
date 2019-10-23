@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 * {
-    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 html, body {
@@ -11,19 +11,9 @@ html, body {
 }
 
 body {
-    background-color: #e7ebf0;
+    background: linear-gradient(rgba(0, 0, 0, 0.767), rgba(68, 68, 67, 0.404)),
+    url("/src/img/FoodTruck1.jpg") no-repeat;
 }
 
-.container {
-    width: 1000px;
-    margin: 20px auto;
-}
 
-.center {
-    display: flex;
-    justify-content: center;
-}
 
-.hide {
-    display: none;
-}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../components/scss/navigation.scss';
-// import searchIcon from '../img/search-icon.png';
+
 
 class Navigation extends Component {
     constructor() {
@@ -18,11 +18,11 @@ class Navigation extends Component {
     }
 
     render() {
-        // let searchForm = this.state.showForm ? (
-        //     <form className="menu__search-form" method="POST">
-        //         <input className="menu__search-input" placeholder="Type and hit enter" />
-        //     </form>
-        // ) : '';
+        let searchForm = this.state.showForm ? (
+            <form className="menu__search-form" method="POST">
+                <input className="menu__search-input" placeholder="Type and hit enter" />
+            </form>
+        ) : '';
 
         let linksMarkup = this.props.links.map((link, index) => {
             let linkMarkup = link.active ? (
@@ -42,18 +42,16 @@ class Navigation extends Component {
             <nav className="menu">
                 <h1 style={{
                 backgroundImage: 'url(' + this.props.logo + ')'
-                }} className="menu__logo">FooTruck TrackR</h1>
+                }} className="menu__logo">FoodTruck TrackR</h1>
 
                 <div className="menu__right">
                     <ul className="menu__list">
                         {linksMarkup}
                     </ul>
 
-                    {/* <button onClick={this.showForm.bind(this)} style={{
-                    backgroundImage: 'url(' + searchIcon + ')'
-                    }} className="menu__search-button"></button>
+                 
 
-                    {searchForm} */}
+                    {searchForm} 
                 </div>
             </nav>
         );

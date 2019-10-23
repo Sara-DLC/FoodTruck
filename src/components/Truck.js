@@ -2,10 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actionCreators from '../state/actionCreators';
+import Rating from '@material-ui/lab/Rating';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 import './scss/truck.scss';
+
+
+
 
 const Truck = (props) => {
     const {truck, buttonText} = props;
+    const [value, setValue] = React.useState(0);
 
     return (
         <div className='truck'>
@@ -23,7 +30,15 @@ const Truck = (props) => {
             <div className='truck-button'>
                 <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
                 <button>{buttonText}</button>
-                <p>ADD RATING</p>
+            <div>
+                    <Box component="fieldset" mb={3} borderColor="transparent"/>
+                    <Typography component="legend">Rating</Typography>
+                    <Rating className="rating" name="simple-controlled"value={value}
+                        onChange={(event,newValue) => {
+                        setValue(newValue);
+                    }}
+                    />
+                </div>
             </div>
         </div>
     )
