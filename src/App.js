@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route } from 'react-router-dom';
 import '../src/components/scss/app.scss';
 import UserForm from './components/LoginForm';
@@ -11,6 +11,12 @@ import SearchPage from './components/SearchPage';
 
 
 function App() {
+  // const [savedList, setSavedList] = useState( [] );
+
+  // const addToSavedList = fav => {
+  //   setSavedList( [...savedList, fav] );
+  // };
+
   return (
     <div className='App'>
 
@@ -24,6 +30,8 @@ function App() {
       {/* create button on top of page */}
       {/* needs edit and delete buttons */}
       <Route exact path = '/trucks/:id/menu' component={Menu} />
+
+      {/* <Route path ='/favorites/:id' render={(props => <Favorites addToSavedList={addToSavedList} {...props} list={savedList}/>)}/>   */}
     
     </div>
   

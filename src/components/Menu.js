@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import NavigationCard from './NavigationCard';
-import './scss/menu.scss';
+import './scss/Menu.scss';
 
 const Menu = (props) => {
     const {getMenu, menu} = props

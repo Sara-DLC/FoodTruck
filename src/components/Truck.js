@@ -5,7 +5,7 @@ import * as actionCreators from '../state/actionCreators';
 import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import './scss/truck.scss';
+import './scss/Truck.scss';
 
 
 const Truck = (props) => {
