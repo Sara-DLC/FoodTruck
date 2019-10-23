@@ -8,18 +8,18 @@ import Box from '@material-ui/core/Box';
 import './scss/truck.scss';
 
 
-
-
 const Truck = (props) => {
     const {truck, buttonText} = props;
     const [value, setValue] = React.useState(0);
 
     return (
         <div className='truck'>
+          
             <div className='truck-image'>
                 <img src={truck.imageOfTruck} alt='food truck'/>
             </div>
             <div className='truck-info'>
+        
                 <p>Cuisine Type: {truck.cuisineType}</p>
                 <p>Average Customer Rating: {truck.customerRatingAvg}</p>
                 <p>Current Location: {truck.currentLocation.location}</p>

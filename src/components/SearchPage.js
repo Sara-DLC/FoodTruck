@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Formik, Field, Form} from 'formik';
 import NavigationCard from './NavigationCard'
+import '../components/scss/searchPage.scss';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
 
@@ -32,8 +33,8 @@ const SearchPage = (props) => {
                             <option value='customerRatingAvg'>Average Rating</option> 
                             <option value='radSize'>radius size</option> 
                             </Field>
-                        <Field name='value' type='text' placeholder='search'/>
-                        <button type='submit'>Search</button>
+                        <Field className="search-field" name='value' type='text' placeholder='search'/>
+                        <button className="search-btn"type='submit'>Search</button>
                     </Form>
                 )
             }}/>
