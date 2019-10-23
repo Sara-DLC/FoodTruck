@@ -20,9 +20,9 @@ const RegisterForm = ({errors, touched, values, status}) => {
 
     return (
     <div className="main">  
-    
+    <img src={logo} alt='girl looking for direction'/>
         <Form className="login-form">
-        
+        <h2>Register Here</h2>
             <Field className="user-field" ype="text"name="user" placeholder="Username"/>
             {touched.user && errors.user && (
             <p className="error">{errors.user}</p>
@@ -54,7 +54,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
             Register
         </Button>
          
-        <Grid >
+        <Grid className="signup-link">
               <Link to="/" variant="body2">
                 {"Already have an account? Login"}
               </Link>
