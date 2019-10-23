@@ -27,7 +27,7 @@ const UserForm = ({errors, touched, status}) => {
         <img src={logo} alt='people eating at the table'/>
         
         <Form className="login-form"> 
-     
+        <h2>Sign In</h2>
             <Field className="user-field" ype="text"name="user" placeholder="Username"/>
             {touched.user && errors.user && (
             <p className="error">{errors.user}</p>
@@ -44,7 +44,7 @@ const UserForm = ({errors, touched, status}) => {
             Sign In 
         </Button>
          
-        <Grid item >
+        <Grid className="signup-link" >
               <Link to='/register' variant='body2'>
                 {`Don't have an account? Sign Up`}
               </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Formik, Field, Form} from 'formik';
-import '../components/scss/searchpage.scss';
+import '../components/scss/searchPage.scss';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
 
