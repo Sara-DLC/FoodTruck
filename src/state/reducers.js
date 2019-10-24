@@ -47,12 +47,14 @@ const initialMenu = [{
     itemPrice: 200
 }];
 
+const initialCurrentTruckId = null
+
 export const trucksReducer = (state = initialTrucks, action) => {
     switch(action.type){
         case types.ADD_TRUCKS:
             return action.payload;
         default:
-            return state
+            return state;
     }
 }
 
@@ -61,6 +63,15 @@ export const menuReducer = (state = initialMenu, action) => {
         case types.ADD_MENU:
             return action.payload;
         default:
-            return state
+            return state;
+    }
+}
+
+export const currentTruckIdReducer = (state=initialCurrentTruckId, action) => {
+    switch(action.type){
+        case types.ADD_CURRENT_TRUCK_ID:
+            return action.payload;
+        default:
+            return state;
     }
 }

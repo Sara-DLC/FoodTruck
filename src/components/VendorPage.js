@@ -10,11 +10,23 @@ import ft2 from '../img/ft2.jpg';
 
 const VendorPage = (props) => {
 
-    const {getTrucks, trucks} = props;
+    const {removeTruck, addTrucks, getTrucks, trucks, setCurrentTruckId} = props;
 
     // useEffect(()=>{
     //     getTrucks();
     // },[]);
+
+    const remove = id => event => {
+        debugger
+        //remove if backend true
+        event.preventDefault();
+        const newTrucks = trucks.filter(truck => {
+            return truck.id !== id
+        })
+        addTrucks(newTrucks)
+        // uncomment if backend true
+        // removeTruck(id)
+    }
 
     return (
         <div className='vendor-page'>
@@ -47,8 +59,8 @@ const VendorPage = (props) => {
                     </div>
                     <div className='truck-button'>
                         <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={e => setCurrentTruckId(truck.id)}>Edit</button>
+                        <button onClick={remove(truck.id)}>Delete</button>
                     </div>
                 </div>
                 ))}
