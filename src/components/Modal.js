@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Popup from 'reactjs-popup';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
@@ -6,15 +6,12 @@ import axios from 'axios';
 import './scss/modal.scss';
 
 
-const Modal = ({ errors, touched, status }) => {
-const [trucks, setTrucks] = useState([]);
-useEffect(() => {
-status && setTrucks(newTrucks => [...newTrucks, status]);
-}, [status]);
+const Modal = (props) => {
+  const { errors, touched, buttonText, className} = props;
 
 return (
-  <div className="modal">
-<Popup trigger={<button className="btn-style"> Create Truck </button>} modal>
+  <div className='modal'>
+<Popup trigger={<button onClick={e => {debugger}} className={className}> {buttonText} </button>} modal>
 <div className='content-styles'>
     <h4>Truck Information</h4>
     <Form>
@@ -43,17 +40,6 @@ return (
     
     </Form>
    
-<label>
-    {trucks.map(truck => (
-    <div key={truck.id}>
-        <p>Added the following:</p>
-        <p>Cuisine: {truck.cuisine}</p>
-        <p>Location: {truck.location}</p>
-        <p>Description: {truck.description}</p>
-        <img src={truck.picture} alt='food truck'/>
-    </div>
-    ))}
-    </label>
 </div>
 </Popup>
 </div>

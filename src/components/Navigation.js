@@ -4,14 +4,14 @@ import NavigationCard from './NavigationCard';
 
 
 class Navigation extends Component {
-  
+
     render() {
-            let linksMarkup = this.props.links.map((link, index) => {
+        let linksMarkup = this.props.links.map((link, index) => {
             let linkMarkup = link.active ? (
                 <a className="link" href={link.link}>{link.label}</a>
             ) : (
-                <a className="link" href={link.link}>{link.label}</a>
-            );
+                    <a className="link" href={link.link}>{link.label}</a>
+                );
 
             return (
                 <li key={index} className="menu__list-item">
@@ -21,13 +21,13 @@ class Navigation extends Component {
         });
 
         return (
-           
+
             <nav className="nav-bar">
-                
+
                 <div className="menu-right">
-                
+
                     <ul>
-                    <NavigationCard/>   {linksMarkup}
+                        <NavigationCard />   {linksMarkup}
                     </ul>
                 </div>
             </nav>
