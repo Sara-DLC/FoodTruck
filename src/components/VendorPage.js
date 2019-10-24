@@ -4,6 +4,7 @@ import * as actionCreators from '../state/actionCreators';
 import { Link } from 'react-router-dom';
 import NavigationCard from './NavigationCard';
 import './scss/VendorPage.scss';
+import Modal from './Modal';
 // import Truck from './Truck';
 
 const VendorPage = (props) => {
@@ -29,9 +30,9 @@ const VendorPage = (props) => {
     return (
         <div className='vendor-page'>
             <NavigationCard myTrucks={true} logout={true}/>
-            <button className="create-truck">Create Truck</button>
-            <div className='trucks-owned'>
            
+            <div className='trucks-owned'>
+            <Modal/>
                 {trucks.map(truck => (
                     <div className='truck'>
                     <div className='truck-image'>
