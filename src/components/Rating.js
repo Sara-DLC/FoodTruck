@@ -1,23 +1,24 @@
-import React from 'react';
-import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React, {useState} from 'react';
+import './scss/stars.scss';
 
-export default function SimpleRating() {
-  const [value, setValue] = React.useState();
 
+const Star = ({ selected = false, onClick = fill => fill }) => (
+  <div className={selected ? "star selected" : "star"} onClick={onClick} />
+);
+
+const StarRating = ({ totalStars }) => {
+  const [starsSelected, selectStar] = useState(0);
   return (
-    <div>
-      <Box component="fieldset" mb={3} borderColor="transparent">
-        <Typography component="legend"></Typography>
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
+    <div className="star-rating">
+      {[...Array(totalStars)].map((param, i) => (
+        <Star
+          key={i}
+          selected={i < starsSelected}
+          onClick={() => selectStar(i + 1)}
         />
-      </Box>
- </div>
+      ))}
+    </div>
   );
-}
+};
+
+export default StarRating;
