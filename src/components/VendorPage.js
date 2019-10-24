@@ -6,15 +6,25 @@ import NavigationCard from './NavigationCard';
 import './scss/VendorPage.scss';
 // import Truck from './Truck';
 
-import ft2 from '../img/ft2.jpg';
-
 const VendorPage = (props) => {
 
-    const {getTrucks, trucks} = props;
+    const {removeTruck, addTrucks, getTrucks, trucks, setCurrentTruckId} = props;
 
     // useEffect(()=>{
     //     getTrucks();
     // },[]);
+
+    const remove = id => event => {
+        debugger
+        //remove if backend true
+        event.preventDefault();
+        const newTrucks = trucks.filter(truck => {
+            return truck.id !== id
+        })
+        addTrucks(newTrucks)
+        // uncomment if backend true
+        // removeTruck(id)
+    }
 
     return (
         <div className='vendor-page'>
@@ -25,7 +35,7 @@ const VendorPage = (props) => {
                 {trucks.map(truck => (
                     <div className='truck'>
                     <div className='truck-image'>
-                        <img /* src={truck.image}*/ src={ft2} alt='food truck'/>
+                        <img src={truck.imageOfTruck} alt='food truck'/>
                     </div>
                     <div className='truck-info'>
         
@@ -47,8 +57,8 @@ const VendorPage = (props) => {
                     </div>
                     <div className='truck-button'>
                         <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={e => setCurrentTruckId(truck.id)}>Edit</button>
+                        <button onClick={remove(truck.id)}>Delete</button>
                     </div>
                 </div>
                 ))}

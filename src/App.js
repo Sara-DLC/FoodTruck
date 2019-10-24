@@ -9,6 +9,7 @@ import Menu from './components/Menu';
 import VendorPage from './components/VendorPage';
 import SearchPage from './components/SearchPage';
 import NavigationCard from '../src/components/NavigationCard';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -21,14 +22,10 @@ function App() {
          <div className="App">
       <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/register" component={RegisterForm}/>
-      <Route exact path = '/favorites' component={Favorites} />
-      {/* needs remove and menu buttons and 'add rating component'*/}
-      <Route exact path = '/truck-search' component={SearchPage} />
-      {/* needs 'add to favorites' and menu buttons 'add rating component'*/}
-      <Route exact path = '/trucks' component={VendorPage} />
-      {/* create button on top of page */}
-      {/* needs edit and delete buttons */}
-      <Route exact path = '/trucks/:id/menu' component={Menu} />
+      <PrivateRoute component={Favorites} exact path = '/favorites'/>
+      <PrivateRoute component={SearchPage} exact path = '/truck-search'/>
+      <PrivateRoute component={VendorPage} exact path = '/trucks' />
+      <PrivateRoute component={Menu} exact path = '/trucks/:id/menu'/>
       {/* </Container> */}
         </div>
     

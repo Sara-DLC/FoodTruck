@@ -11,13 +11,14 @@ import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
     trucks: reducers.trucksReducer,
-    menu: reducers.menuReducer
+    menu: reducers.menuReducer,
+    currentTruckId: reducers.currentTruckIdReducer
 })
 
 const store = createStore(rootReducer,
     compose(
         applyMiddleware(thunk),
-        // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     ))
 
 ReactDOM.render(

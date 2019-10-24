@@ -106,15 +106,27 @@ const FormikUserForm = withFormik({
 
       props.history.push("/trucks")
 
-      axios
-        .post("https://food-truck-finder-rj.herokuapp.com/api/login", params)
-        .then(response => {
-          localStorage.setItem('token', response.data.token);
-          localStorage.setItem('user', response.data.user.id);
-          props.history.push("/trucks")
-          resetForm();
-        })
-        .catch(error => console.log(error.response));
+      // axios
+      //   .post("https://my.api.mockaroo.com/login.json?key=59ae78a0",
+      //   {
+      //     headers: {
+      //         'X-API-Key': '59ae78a0'
+      //     }
+      //   })
+      //   .then(response => {
+      //     const userRole = response.data.user.role
+      //     localStorage.setItem('token', response.data.token);
+      //     localStorage.setItem('user', response.data.user.id);
+      //     if(userRole === 'male'){
+      //       props.history.push("/trucks")
+      //     }else {
+      //       props.history.push("/favorites")
+      //     }
+      //     resetForm();
+      //   })
+      //   .catch(error => {
+      //     console.log(error.response);
+      //   })
     }
   })(UserForm); 
 
