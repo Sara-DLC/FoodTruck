@@ -2,8 +2,8 @@ import * as types from './actionTypes';
 
 const initialTrucks = [{
     id: 1,
-    imageOfTruck: '',
-    cuisineType: 'Chinese',
+    imageOfTruck: 'https://www.mtlblog.com/u/2018/04/03/aa440c103b0e8954d031664dcb2ebd9d7fa1c305.jpg_1200x630.jpg',
+    cuisineType: 'Fast Food',
     customerRatingAvg: 5,
     menu: [],
     currentLocation: {
@@ -18,8 +18,8 @@ const initialTrucks = [{
 },
 {
     id:2,
-    imageOfTruck: '',
-    cuisineType: 'Pizza',
+    imageOfTruck: 'https://f00d.ca/montreal/wp-content/uploads/2013/10/MFT-GRUM-093013-01.jpg?w=640',
+    cuisineType: 'Fast Food',
     customerRatingAvg: 3,
     currentLocation: {
         location: 'route 19',
@@ -33,18 +33,18 @@ const initialTrucks = [{
 }];
 
 const initialMenu = [{
-    itemName: 'Something',
-    itemPhotos: [],
-    itemDescription: 'tastes good',
-    customerRatingAvg: 3,
-    itemPrice: 20
+    itemName: 'Burger',
+    itemPhotos: 'https://www.designindaba.com/sites/default/files/styles/scaledlarge/public/node/news/23566/sonic-burger.jpg?itok=zGk5pjcI',
+    itemDescription: 'classic hamburger',
+    customerRatingAvg: 4,
+    itemPrice: 5
 },
 {
-    itemName: 'good thing',
-    itemPhotos: [],
-    itemDescription: 'tastes kinda good',
+    itemName: 'Pizza',
+    itemPhotos: 'https://images-gmi-pmc.edge-generalmills.com/f4c0a86f-b080-45cd-a8a7-06b63cdb4671.jpg',
+    itemDescription: 'Fresh Pepperoni pizza',
     customerRatingAvg: 5,
-    itemPrice: 200
+    itemPrice: 8
 }];
 
 const initialCurrentTruckId = null

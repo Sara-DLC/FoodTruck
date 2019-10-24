@@ -5,8 +5,6 @@ import * as actionCreators from '../state/actionCreators';
 import  StarRating from './Rating';
 import './scss/Truck.scss';
 
-import ft1 from '../img/ft1.jpg';
-
 
 const Truck = (props) => {
     const {truck, buttonText, removeFavorites, addFavorites, addTrucks, trucks} = props;
@@ -30,7 +28,7 @@ const Truck = (props) => {
         <div className='truck'>
         
             <div className='truck-image'>
-                <img src={ft1} alt='food truck'/>
+                <img src={truck.imageOfTruck} alt='food truck'/>
             </div>
             <div className='truck-info'>
         

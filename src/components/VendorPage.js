@@ -6,8 +6,6 @@ import NavigationCard from './NavigationCard';
 import './scss/VendorPage.scss';
 // import Truck from './Truck';
 
-import ft2 from '../img/ft2.jpg';
-
 const VendorPage = (props) => {
 
     const {removeTruck, addTrucks, getTrucks, trucks, setCurrentTruckId} = props;
@@ -37,7 +35,7 @@ const VendorPage = (props) => {
                 {trucks.map(truck => (
                     <div className='truck'>
                     <div className='truck-image'>
-                        <img /* src={truck.image}*/ src={ft2} alt='food truck'/>
+                        <img src={truck.imageOfTruck} alt='food truck'/>
                     </div>
                     <div className='truck-info'>
         
