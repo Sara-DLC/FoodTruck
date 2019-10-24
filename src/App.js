@@ -1,25 +1,24 @@
 import React, {useState} from 'react';
 import { Route } from 'react-router-dom';
 import '../src/components/scss/app.scss';
+import Container from '@material-ui/core/Container';
 import UserForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import Favorites from './components/Favorites';
 import Menu from './components/Menu';
 import VendorPage from './components/VendorPage';
 import SearchPage from './components/SearchPage';
+import NavigationCard from '../src/components/NavigationCard';
 
 
 
 function App() {
-  // const [savedList, setSavedList] = useState( [] );
-
-  // const addToSavedList = fav => {
-  //   setSavedList( [...savedList, fav] );
-  // };
+ 
 
   return (
-    <div className='App'>
-
+    <div className="App">
+       <NavigationCard/>
+       <Container className="App" fixed>
       <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/register" component={RegisterForm}/>
       <Route exact path = '/favorites' component={Favorites} />
@@ -30,8 +29,7 @@ function App() {
       {/* create button on top of page */}
       {/* needs edit and delete buttons */}
       <Route exact path = '/trucks/:id/menu' component={Menu} />
-
-      {/* <Route path ='/favorites/:id' render={(props => <Favorites addToSavedList={addToSavedList} {...props} list={savedList}/>)}/>   */}
+      </Container>
     
     </div>
   

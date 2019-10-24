@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import * as Yup from "yup";
+import logo from'../img/register.png';
 
 
 const RegisterForm = ({errors, touched, values, status}) => {
@@ -19,9 +20,9 @@ const RegisterForm = ({errors, touched, values, status}) => {
 
     return (
     <div className="main">  
-    <h1>FoodTruck TrackR</h1> 
-        <Form>
-        
+    <img src={logo} alt='girl looking for direction'/>
+        <Form className="login-form">
+        <h2>Register Here</h2>
             <Field className="user-field" ype="text"name="user" placeholder="Username"/>
             {touched.user && errors.user && (
             <p className="error">{errors.user}</p>
@@ -53,7 +54,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
             Register
         </Button>
          
-        <Grid item>
+        <Grid className="signup-link">
               <Link to="/" variant="body2">
                 {"Already have an account? Login"}
               </Link>

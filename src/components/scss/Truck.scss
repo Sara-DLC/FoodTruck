@@ -1,32 +1,59 @@
 .truck {
     display: flex;
     width: 80vw;
-    background-color: white;
+    margin-top:30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-left: 12%;
-    margin-top: 4%;
+    background-color: white;
+    
+
+    .truck-card{
+        display: flex;
+        width: 100vw;
+    }
 
     .truck-image {
-        width: 25%;
-        border-radius: 10px;
+        width: 25vw;
     }
 
     .truck-info {
-        width: 60%;
-        display:flex;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    line-height: 0px;
+    }
+
+
+    .truck-button{
+        width: 25vw;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        text-align: justify;
-        margin-left: 2%;
-        line-height: .1rem;
-    }
-
-
-    button{
-        width: 100%;
+        justify-content: space-evenly;
+     button {
+        display: flex;
+    justify-content: center;
+    width: 15vw;
     height: 4vh;
-    border-radius: 10px;
-    margin: 8%;
+    border-radius: 25px;
+    font-size: 1rem;
+  
+     }
+
+     .rating{
+        width: 10vw;
+        display: flex;
+        justify-content: center;
+        margin-left: 26px;
+     }
     }
+}
+
+.create-truck {
+    margin-top: 20px;
+    height: 4vh;
+    border-radius: 25px;
+    font-size: 1rem;
+  
 }

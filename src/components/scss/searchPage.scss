@@ -1,35 +1,46 @@
 
 .search-form{
-    width: 90%;
-    margin-left: 21px;
-    height: 35px;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
     font-size: 1rem;
     cursor: pointer;
+
+    .dropdown{
+        width: 24vw;
+        font-size: 1rem;
+     
+    }
+
+    .search-field {
+        width: 24vw;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left: 5px;
+     
+    }
+    
+    .search-btn{
+        width: 10vw;
+        font-size: 1rem;
+        height: 3vh;
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 5px;
+    }
+    
 }
 
-.dropdown{
-    width: 28%;
-    height: 35px;
-    font-size: 1rem;
-    margin-left: 55px;
+
+.search-results{
+    width: 100vw; 
+    height: 100vh;
 }
 
 
-.search-field {
-    width: 25%;
-    margin-left: 21px;
-    margin-top: 2%;
-    height: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
-.search-btn{
-  
-    width: 8%;
-    height: 4vh;
-    margin-left: 12px;
-    border-radius: 10px;
-    text-align: center;
-}
+
+
