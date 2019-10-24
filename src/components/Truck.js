@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actionCreators from '../state/actionCreators';
 import Typography from '@material-ui/core/Typography';
-import SimpleRating from './Rating';
+import  StarRating from './Rating';
 import './scss/Truck.scss';
 
 import ft1 from '../img/ft1.jpg';
@@ -40,8 +40,7 @@ const Truck = (props) => {
                 <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
                 <button>{buttonText}</button>
                 <div className="rating">       
-                    <Typography component="legend"></Typography>
-                    <SimpleRating/>         
+                    <StarRating totalStars={5} />         
                 </div>
             </div>
          
