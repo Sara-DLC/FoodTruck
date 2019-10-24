@@ -7,7 +7,7 @@ import axios from "axios";
 import * as Yup from "yup";
 import './scss/LoginForm.scss';
 import logo from'../img/login.png';
-
+import NavigationCard from './NavigationCard';
 
 
 const UserForm = ({errors, touched, status}) => {
@@ -22,6 +22,8 @@ const UserForm = ({errors, touched, status}) => {
 
 
     return (
+      <div>
+      <NavigationCard login={true} logout={true} register={true}/>
       
     <div className="main">
          
@@ -69,6 +71,7 @@ const UserForm = ({errors, touched, status}) => {
 
 
     </div>
+    </div>
   
 
 );
@@ -95,6 +98,7 @@ const FormikUserForm = withFormik({
 
 
     handleSubmit(values, { props, resetForm }) {
+      debugger
       const params ={
         username: values.user,
         password: values.password

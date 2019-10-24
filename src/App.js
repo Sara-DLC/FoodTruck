@@ -17,7 +17,6 @@ function App() {
 
   return (
     <div className="App">
-       <NavigationCard/>
        {/* <Container className="App" fixed> */}
          <div className="App">
       <Route exact path ='/' component={UserForm}/>

@@ -3,19 +3,27 @@ import './scss/navigation.scss';
 import {Link} from 'react-router-dom';
 import logo from '../img/logo-2.png';
 
-const Nav =({home, search, features, about, login, register}) =>{
+const Nav =({home, search, myTrucks, favorites, login, register, logout}) =>{
+  
+
+  const onLogout = event => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user')
+  }
  
     return(
      
       <header className='header-section' >
           <img src={logo} alt="FoodTruck Trackr Logo"/>
         <nav className="nav-bar">
-              <Link to='/favorites'>HOME{home}</Link>
-              <Link to='/'>FEATURES{features}</Link>
-              <Link to='truck-search'>SEARCH{search}</Link>
-              <Link to='/'>ABOUT US{about}</Link>
-              <Link to='/'>LOGIN{login}</Link>
-              <Link to='/register'>REGISTER{register}</Link>
+              <Link to='/'>HOME</Link>
+              <Link to='/'>ABOUT US</Link>
+              {favorites? <Link to='/favorites'>FAVORITES</Link> : null}
+              {search? <Link to='/truck-search'>SEARCH</Link> : null}
+              {myTrucks? <Link to='/trucks'>TRUCKS</Link> : null}
+              {login ? <Link to='/'>LOGIN</Link> : null }
+              {register ? <Link to='/register'>REGISTER</Link> : null }
+              {logout ? <Link to='/' onClick={onLogout}>LOGOUT</Link> : null }
           </nav>
 
       </header>

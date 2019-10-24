@@ -7,6 +7,7 @@ import axios from "axios";
 import * as Yup from "yup";
 import './scss/LoginForm.scss';
 import logo from'../img/register.png';
+import NavigationCard from './NavigationCard';
 
 
 const RegisterForm = ({errors, touched, values, status}) => {
@@ -20,7 +21,9 @@ const RegisterForm = ({errors, touched, values, status}) => {
 
 
     return (
-    <div className="main">  
+      <div>
+      <NavigationCard login={true} logout={true} register={true}/>
+    <div className="main">
     <img src={logo} alt='girl looking for direction'/>
         <Form className="login-form">
         <h2>Register Here</h2>
@@ -74,7 +77,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
     
     </label>
     </div>
-  
+    </div>
 
 );
 }
