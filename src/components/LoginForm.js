@@ -94,7 +94,7 @@ const FormikUserForm = withFormik({
         const userRole = response.data.user.role
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', response.data.user.id);
-        if (userRole === 'male') {
+        if (userRole === 'Male') {
           props.history.push("/trucks")
         } else {
           props.history.push("/favorites")
