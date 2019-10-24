@@ -15,18 +15,19 @@ status && setTrucks(newTrucks => [...newTrucks, status]);
 return (
   <div className="modal">
 <Popup trigger={<button className="btn-style"> Create Truck </button>} modal>
-<div className='modal-styles'>
+<div className='content-styles'>
     <h4>Truck Information</h4>
     <Form>
-    <Field type='text' name='cuisine' placeholder='Enter Cuisine Type' />
+    <Field className="box-styles" type='text' name='cuisine' placeholder='Enter Cuisine Type' />
     {touched.cuisine && errors.cuisine && (
         <p>{errors.cuisine}</p>
     )}
 
-    <Field  type='text' name='location' placeholder='Enter Current Location' />
+    <Field className="box-styles"  type='text' name='location' placeholder='Enter Current Location' />
     {touched.location && errors.location && <p className="error">{errors.location}</p>}
 
     <Field
+        className="box-styles" 
         component='textarea'
         type='text'
         name='description'
@@ -36,23 +37,23 @@ return (
         <p>{errors.description}</p>
     )}
     
-    <button type='submit'>Add</button>
-    
+    <button className='modal-btn'type='submit'>Add</button>
+    <button className='modal-btn'>Upload Image</button>
+ 
     
     </Form>
-    <button>Upload Image</button>
-    <button type='submit'>Edit</button>
    
-
+<label>
     {trucks.map(truck => (
-    <ul key={truck.id}>
+    <div key={truck.id}>
         <p>Added the following:</p>
-        <li>Cuisine: {truck.cuisine}</li>
-        <li>Location: {truck.location}</li>
-        <li>Description: {truck.description}</li>
+        <p>Cuisine: {truck.cuisine}</p>
+        <p>Location: {truck.location}</p>
+        <p>Description: {truck.description}</p>
         <img src={truck.picture} alt='food truck'/>
-    </ul>
+    </div>
     ))}
+    </label>
 </div>
 </Popup>
 </div>
@@ -63,6 +64,7 @@ const FormikModal = withFormik({
  
   mapPropsToValues({ cuisine, location, description }) {
     return {
+      
         cuisine: cuisine || '',
         location: location || '',
         description: description || '',
@@ -72,16 +74,17 @@ const FormikModal = withFormik({
   validationSchema: Yup.object().shape({
     cuisine: Yup.string().required(),
     location: Yup.string().required(),
-    description: Yup.string(),
+    description: Yup.string()
   }),
 
   
   handleSubmit(values, { props , resetForm}) {
     /*What we want to pass to edit fields */
+    debugger
     axios
-      .post('https://food-truck-finder-rj.herokuapp.com/api', values)
+      .post('https://reqres.in/api/users', values)
       .then(res => {
-        
+        resetForm();
       })
       .catch(err =>(err.response));
   }
