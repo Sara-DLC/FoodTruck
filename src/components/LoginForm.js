@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import * as Yup from "yup";
-import logo from'../img/eating.png';
+import logo from'../img/login.png';
+
 
 
 const UserForm = ({errors, touched, status}) => {
@@ -52,6 +53,8 @@ const UserForm = ({errors, touched, status}) => {
             </label>
         </Form>
 
+      
+
 {/* <label>
 
     {userName.map(memberId =>(
@@ -62,6 +65,8 @@ const UserForm = ({errors, touched, status}) => {
     ))}
     
     </label> */}
+
+
     </div>
   
 

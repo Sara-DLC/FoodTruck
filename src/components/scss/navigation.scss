@@ -36,6 +36,9 @@
   header nav a:hover {
     color: #ffc107;
   }
+  header nav a:focus {
+    color: #ffc107;
+  }
   @media (max-width: 500px) {
     header nav a {
       border-bottom: 2px solid #ffc107;

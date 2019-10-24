@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
 
+
+
 const Favorites = (props) => {
 
     const {getFavorites, trucks} = props;
@@ -16,7 +18,6 @@ const Favorites = (props) => {
             {trucks.map(item => ( 
                 <Truck truck={item} buttonText='Remove' className="fav-btn"/> 
             ))}
-
 
         </div>
        

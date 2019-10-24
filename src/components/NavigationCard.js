@@ -13,8 +13,7 @@ const Nav =({home, search, features, about, login, register}) =>{
               <Link to='/favorites'>HOME{home}</Link>
               <Link to='/'>FEATURES{features}</Link>
               <Link to='truck-search'>SEARCH{search}</Link>
-              <Link to='/'>FEATURES{features}</Link>
-              <Link to='/'>ABOUT {about}</Link>
+              <Link to='/'>ABOUT US{about}</Link>
               <Link to='/'>LOGIN{login}</Link>
               <Link to='/register'>REGISTER{register}</Link>
           </nav>

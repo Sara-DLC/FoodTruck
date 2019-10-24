@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Route } from 'react-router-dom';
 import '../src/components/scss/app.scss';
+import Container from '@material-ui/core/Container';
 import UserForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import Favorites from './components/Favorites';
@@ -15,9 +16,9 @@ function App() {
  
 
   return (
-    <div>
+    <div className="App">
        <NavigationCard/>
-
+       <Container className="App" fixed>
       <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/register" component={RegisterForm}/>
       <Route exact path = '/favorites' component={Favorites} />
@@ -28,7 +29,7 @@ function App() {
       {/* create button on top of page */}
       {/* needs edit and delete buttons */}
       <Route exact path = '/trucks/:id/menu' component={Menu} />
-
+      </Container>
     
     </div>
   

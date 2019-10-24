@@ -5,6 +5,7 @@ import '../components/scss/searchPage.scss';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
 
+
 const SearchPage = (props) => {
 
     const {searchTrucks, trucks} = props;
@@ -18,6 +19,7 @@ const SearchPage = (props) => {
         <div className='search-page'>
       
             <Formik 
+          
             initialValues={{
                 options: '',
                 value: ''
