@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import * as Yup from "yup";
+import './scss/LoginForm.scss';
 import logo from'../img/register.png';
+import NavigationCard from './NavigationCard';
 
 
 const RegisterForm = ({errors, touched, values, status}) => {
@@ -19,7 +21,9 @@ const RegisterForm = ({errors, touched, values, status}) => {
 
 
     return (
-    <div className="main">  
+      <div>
+      <NavigationCard login={true} logout={true} register={true}/>
+    <div className="main">
     <img src={logo} alt='girl looking for direction'/>
         <Form className="login-form">
         <h2>Register Here</h2>
@@ -49,7 +53,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
             </Field>
             {touched.options && errors.options && <p className="error">{errors.options}</p>}
 
-       <label className ='sign-In'>
+       <div className ='sign-In'>
         <Button type="submit" fullWidth variant="contained" color="primary">
             Register
         </Button>
@@ -59,7 +63,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
                 {"Already have an account? Login"}
               </Link>
             </Grid>
-            </label>
+            </div>
         </Form>
 
 <label>
@@ -73,7 +77,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
     
     </label>
     </div>
-  
+    </div>
 
 );
 }

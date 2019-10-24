@@ -4,6 +4,7 @@ import {Formik, Field, Form} from 'formik';
 import '../components/scss/searchPage.scss';
 import * as actionCreators from '../state/actionCreators';
 import Truck from './Truck';
+import NavigationCard from './NavigationCard';
 
 
 const SearchPage = (props) => {
@@ -16,6 +17,9 @@ const SearchPage = (props) => {
     }
 
     return (
+        <div>
+            <NavigationCard search={true} favorites={true} logout={true}/>
+        
         <div className='search-page'>
       
             <Formik 
@@ -44,6 +48,7 @@ const SearchPage = (props) => {
                     <Truck truck={truck} buttonText='Add to Fav'/>
                 ))}
             </div>
+        </div>
         </div>
     )
 }

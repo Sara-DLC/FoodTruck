@@ -17,8 +17,8 @@ function App() {
 
   return (
     <div className="App">
-       <NavigationCard/>
-       <Container className="App" fixed>
+       {/* <Container className="App" fixed> */}
+         <div className="App">
       <Route exact path ='/' component={UserForm}/>
       <Route exact path ="/register" component={RegisterForm}/>
       <Route exact path = '/favorites' component={Favorites} />
@@ -29,7 +29,8 @@ function App() {
       {/* create button on top of page */}
       {/* needs edit and delete buttons */}
       <Route exact path = '/trucks/:id/menu' component={Menu} />
-      </Container>
+      {/* </Container> */}
+        </div>
     
     </div>
   

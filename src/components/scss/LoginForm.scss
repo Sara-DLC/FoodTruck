@@ -1,0 +1,75 @@
+
+  
+  .main{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vw;
+    margin-top: 30px;
+
+    .login-form{
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+        .user-field {
+        margin: 13px;
+        width: 20vw;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 1rem;
+        }
+
+        p {
+            color: red;
+        }
+
+    }
+     img{
+       width: 50vw;
+     }
+  }
+   
+  .option{
+    width: 22vw;
+    height: 5vh;
+    font-size: 1rem;
+    border-radius: 8px;
+    }
+  
+  .sign-In {
+    margin: 13px;
+      width: 22vw;
+      border-radius: 8px;
+      font-size: 1rem;
+
+      button {
+        background-color: black;
+        color: #ffc107;
+        &:hover {
+            background-color: #ffc107;
+            color: black;
+        }
+        }
+  }
+
+  
+  
+  .signup-link {
+    width: 22vw;
+    text-align: center;
+    margin-top: 15px;
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: #ffc107;
+        }
+    }
+    
+    
+  }
+ 

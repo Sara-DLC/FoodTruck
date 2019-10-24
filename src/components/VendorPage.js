@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import { Link } from 'react-router-dom';
+import NavigationCard from './NavigationCard';
+import './scss/VendorPage.scss';
 // import Truck from './Truck';
+
+import ft2 from '../img/ft2.jpg';
 
 const VendorPage = (props) => {
 
@@ -14,21 +18,32 @@ const VendorPage = (props) => {
 
     return (
         <div className='vendor-page'>
+            <NavigationCard myTrucks={true} logout={true}/>
             <button className="create-truck">Create Truck</button>
-            <div className='favorite-trucks'>
+            <div className='trucks-owned'>
            
                 {trucks.map(truck => (
                     <div className='truck'>
                     <div className='truck-image'>
-                        <img src={truck.image} alt='food truck'/>
+                        <img /* src={truck.image}*/ src={ft2} alt='food truck'/>
                     </div>
                     <div className='truck-info'>
-                    <p>Cuisine Type: {truck.cuisineType}</p>
-                        <p>Average Customer Rating: {truck.customerRatingAvg}</p>
-                        <p>Current Location: {truck.currentLocation.location}</p>
-                        <p>Current Location Depart Time: {truck.currentLocation.departureTime}</p>
-                        <p>Next Location: {truck.nextLocation.location}</p>
-                        <p>Next Location Arrival Time: {truck.nextLocation.arrivalTime}</p>
+        
+                        <p><strong>Cuisine Type:</strong> </p>
+                        <p><strong>Average Customer Rating:</strong> </p>
+                        <p><strong>Current Location:</strong> </p>
+                        <p><strong>Current Location Depart Time:</strong></p>
+                        <p><strong>Next Location:</strong> </p>
+                        <p><strong>Next Location Arrival Time:</strong> </p>
+                    </div>
+                    <div className='truck-info'>
+                
+                        <p>{truck.cuisineType}</p>
+                        <p>{truck.customerRatingAvg}</p>
+                        <p>{truck.currentLocation.location}</p>
+                        <p>{truck.currentLocation.departureTime}</p>
+                        <p>{truck.nextLocation.location}</p>
+                        <p>{truck.nextLocation.arrivalTime}</p>
                     </div>
                     <div className='truck-button'>
                         <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
