@@ -1,0 +1,18 @@
+.modal {
+    width: 79vw;
+    display: flex;
+    height: 4vh;
+    cursor: pointer;
+    margin-top: 20px;
+    .btn-style{
+        border-radius: 20px;
+    height: 5vh;
+    width: 13vw;
+    font-size: 1rem;
+     
+    &:hover{
+        color:rgb(206, 175, 38);
+        background-color: black;
+    }
+    }
+}

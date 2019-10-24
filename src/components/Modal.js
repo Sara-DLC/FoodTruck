@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import './scss/modal.scss';
 
 
 const Modal = ({ errors, touched, status }) => {
@@ -12,7 +13,8 @@ status && setTrucks(newTrucks => [...newTrucks, status]);
 }, [status]);
 
 return (
-<Popup trigger={<button> Create Truck </button>} modal>
+  <div className="modal">
+<Popup trigger={<button className="btn-style"> Create Truck </button>} modal>
 <div className='modal-styles'>
     <h4>Truck Information</h4>
     <Form>
@@ -53,6 +55,7 @@ return (
     ))}
 </div>
 </Popup>
+</div>
 );
 };
 

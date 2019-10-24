@@ -20,9 +20,9 @@ const VendorPage = (props) => {
     return (
         <div className='vendor-page'>
             <NavigationCard myTrucks={true} logout={true}/>
-            <Modal/>
-            <div className='trucks-owned'>
            
+            <div className='trucks-owned'>
+            <Modal/>
                 {trucks.map(truck => (
                     <div className='truck'>
                     <div className='truck-image'>
