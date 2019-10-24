@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actionCreators from '../state/actionCreators';
-import  StarRating from './Rating';
+import StarRating from './Rating';
 import './scss/Truck.scss';
 
 
 const Truck = (props) => {
-    const {truck, buttonText, removeFavorites, addFavorites, addTrucks, trucks} = props;
+    const { truck, buttonText, removeFavorites, addFavorites, addTrucks, trucks } = props;
 
     const submit = id => event => {
         event.preventDefault();
-        if(buttonText === 'Remove'){
+        if (buttonText === 'Remove') {
             const newTrucks = trucks.filter(truck => {
                 return truck.id !== id
             })
@@ -26,12 +26,12 @@ const Truck = (props) => {
 
     return (
         <div className='truck'>
-        
+
             <div className='truck-image'>
-                <img src={truck.imageOfTruck} alt='food truck'/>
+                <img src={truck.imageOfTruck} alt='food truck' />
             </div>
             <div className='truck-info'>
-        
+
                 <p><strong>Cuisine Type:</strong> </p>
                 <p><strong>Average Customer Rating:</strong> </p>
                 <p><strong>Current Location:</strong> </p>
@@ -40,7 +40,7 @@ const Truck = (props) => {
                 <p><strong>Next Location Arrival Time:</strong> </p>
             </div>
             <div className='truck-info'>
-        
+
                 <p>{truck.cuisineType}</p>
                 <p>{truck.customerRatingAvg}</p>
                 <p>{truck.currentLocation.location}</p>
@@ -51,11 +51,11 @@ const Truck = (props) => {
             <div className='truck-button'>
                 <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
                 <button onClick={submit(truck.id)}>{buttonText}</button>
-                <div className="rating">       
-                    <StarRating totalStars={5} />         
+                <div className="rating">
+                    <StarRating totalStars={5} />
                 </div>
             </div>
-         
+
         </div>
     )
 

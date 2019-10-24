@@ -5,18 +5,16 @@ import { Link } from 'react-router-dom';
 import NavigationCard from './NavigationCard';
 import './scss/VendorPage.scss';
 import Modal from './Modal';
-// import Truck from './Truck';
 
 const VendorPage = (props) => {
 
-    const {removeTruck, addTrucks, getTrucks, trucks, setCurrentTruckId} = props;
+    const { removeTruck, addTrucks, getTrucks, trucks, setCurrentTruckId } = props;
 
-    // useEffect(()=>{
-    //     getTrucks();
-    // },[]);
+    useEffect(() => {
+        getTrucks();
+    }, []);
 
     const remove = id => event => {
-        debugger
         //remove if backend true
         event.preventDefault();
         const newTrucks = trucks.filter(truck => {
@@ -29,43 +27,43 @@ const VendorPage = (props) => {
 
     return (
         <div className='vendor-page'>
-            <NavigationCard myTrucks={true} logout={true}/>
-           
+            <NavigationCard myTrucks={true} logout={true} />
+            <Modal buttonText='Create Truck' className='create-truck' />
             <div className='trucks-owned'>
-            <Modal/>
+
                 {trucks.map(truck => (
                     <div className='truck'>
-                    <div className='truck-image'>
-                        <img src={truck.imageOfTruck} alt='food truck'/>
+                        <div className='truck-image'>
+                            <img src={truck.imageOfTruck} alt='food truck' />
+                        </div>
+                        <div className='truck-info'>
+
+                            <p><strong>Cuisine Type:</strong> </p>
+                            <p><strong>Average Customer Rating:</strong> </p>
+                            <p><strong>Current Location:</strong> </p>
+                            <p><strong>Current Location Depart Time:</strong></p>
+                            <p><strong>Next Location:</strong> </p>
+                            <p><strong>Next Location Arrival Time:</strong> </p>
+                        </div>
+                        <div className='truck-info'>
+
+                            <p>{truck.cuisineType}</p>
+                            <p>{truck.customerRatingAvg}</p>
+                            <p>{truck.currentLocation.location}</p>
+                            <p>{truck.currentLocation.departureTime}</p>
+                            <p>{truck.nextLocation.location}</p>
+                            <p>{truck.nextLocation.arrivalTime}</p>
+                        </div>
+                        <div className='truck-button'>
+                            <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
+                            <Modal buttonText='Edit' />
+                            <button onClick={remove(truck.id)}>Delete</button>
+                        </div>
                     </div>
-                    <div className='truck-info'>
-        
-                        <p><strong>Cuisine Type:</strong> </p>
-                        <p><strong>Average Customer Rating:</strong> </p>
-                        <p><strong>Current Location:</strong> </p>
-                        <p><strong>Current Location Depart Time:</strong></p>
-                        <p><strong>Next Location:</strong> </p>
-                        <p><strong>Next Location Arrival Time:</strong> </p>
-                    </div>
-                    <div className='truck-info'>
-                
-                        <p>{truck.cuisineType}</p>
-                        <p>{truck.customerRatingAvg}</p>
-                        <p>{truck.currentLocation.location}</p>
-                        <p>{truck.currentLocation.departureTime}</p>
-                        <p>{truck.nextLocation.location}</p>
-                        <p>{truck.nextLocation.arrivalTime}</p>
-                    </div>
-                    <div className='truck-button'>
-                        <button><Link to={`/trucks/${truck.id}/menu`}>Menu</Link></button>
-                        <button onClick={e => setCurrentTruckId(truck.id)}>Edit</button>
-                        <button onClick={remove(truck.id)}>Delete</button>
-                    </div>
-                </div>
                 ))}
-            </div>  
+            </div>
         </div>
-        
+
     )
 }
 

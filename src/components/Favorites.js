@@ -9,25 +9,25 @@ import './scss/Favorites.scss';
 
 const Favorites = (props) => {
 
-    const {getFavorites, trucks} = props;
+    const { getFavorites, trucks } = props;
 
-    // useEffect(()=>{
-    //     getFavorites();
-    // },[]);
+    useEffect(() => {
+        getFavorites();
+    }, []);
 
     return (
         <div>
-        <NavigationCard search={true} favorites={true} logout={true}/>
-        <div className='favorite-trucks'>
-            {trucks.map(item => ( 
-                <Truck truck={item} buttonText='Remove' className="fav-btn"/> 
-            ))}
+            <NavigationCard search={true} favorites={true} logout={true} />
+            <div className='favorite-trucks'>
+                {trucks.map(item => (
+                    <Truck truck={item} buttonText='Remove' className="fav-btn" />
+                ))}
 
-        </div>
+            </div>
         </div>
     )
 
-    
+
 }
 
 export default connect(

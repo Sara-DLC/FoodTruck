@@ -11,15 +11,31 @@ export const addTrucks = (trucks) => {
 }
 
 export const getFavorites = () => dispatch => {
-    const userId = localStorage.getItem('user')
+    // uncomment if backendTrue
+    // const userId = localStorage.getItem('user')
 
-    axiosWithAuth().get(baseUrl + `/user/${userId}`)
-    .then(res => {
-        dispatch(addTrucks(res.data.favoritetrucks))
-    })
-    .catch(err => {
-        alert(err.message)
-    })
+    // axiosWithAuth().get(baseUrl + `/user/${userId}`)
+    // .then(res => {
+    //     dispatch(addTrucks(res.data.favoritetrucks))
+    // })
+    // .catch(err => {
+    //     alert(err.message)
+    // })
+
+    // MockAPI Call
+    axiosWithAuth()
+        .get("https://my.api.mockaroo.com/trucks.json?key=59ae78a0",
+        {
+          headers: {
+              'X-API-Key': '59ae78a0'
+          }
+        })
+        .then(response => {
+            dispatch(addTrucks(response.data))
+        })
+        .catch(error => {
+            alert(error.message)
+        })
 }
 
 export const removeFavorites = (id) => dispatch => {
@@ -49,15 +65,32 @@ export const addFavorites = (id) => dispatch => {
 
 
 export const getTrucks = () => dispatch => {
-    const userId = localStorage.getItem('user')
+    // uncomment if backend is true
+    // const userId = localStorage.getItem('user')
 
-    axiosWithAuth().get(baseUrl + `/vendor/${userId}`)
-    .then(res => {
-        dispatch(addTrucks(res.data.trucksOwned))
-    })
-    .catch(err => {
-        alert(err.message)
-    })
+    // axiosWithAuth().get(baseUrl + `/vendor/${userId}`)
+    // .then(res => {
+    //     dispatch(addTrucks(res.data.trucksOwned))
+    // })
+    // .catch(err => {
+    //     alert(err.message)
+    // })
+
+    // MockAPI Call
+
+    axiosWithAuth()
+        .get("https://my.api.mockaroo.com/trucks.json?key=59ae78a0",
+        {
+          headers: {
+              'X-API-Key': '59ae78a0'
+          }
+        })
+        .then(response => {
+            dispatch(addTrucks(response.data))
+        })
+        .catch(error => {
+            alert(error.message)
+        })
 }
 
 export const removeTruck = (id) => dispatch => {
@@ -71,7 +104,19 @@ export const removeTruck = (id) => dispatch => {
 }
 
 export const searchTrucks = (formValues) => dispatch => {
-    return null;
+    axiosWithAuth()
+        .get("https://my.api.mockaroo.com/trucks.json?key=59ae78a0",
+        {
+          headers: {
+              'X-API-Key': '59ae78a0'
+          }
+        })
+        .then(response => {
+            dispatch(addTrucks(response.data))
+        })
+        .catch(error => {
+            alert(error.message)
+        })
 }
 
 
