@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import * as Yup from "yup";
+import './scss/LoginForm.scss';
 import logo from'../img/login.png';
 
 
@@ -28,7 +29,7 @@ const UserForm = ({errors, touched, status}) => {
         <img src={logo} alt='people eating at the table'/>
         
         <Form className="login-form"> 
-        <h2>Sign In</h2>
+        <h1>Sign In</h1>
             <Field className="user-field" ype="text"name="user" placeholder="Username"/>
             {touched.user && errors.user && (
             <p className="error">{errors.user}</p>
@@ -40,8 +41,8 @@ const UserForm = ({errors, touched, status}) => {
             <p className="error">{errors.password}</p>
             )}
 
-       <label className ='sign-In'>
-        <Button  type="submit" fullWidth variant='contained' size='medium' color="primary">
+       <div className ='sign-In'>
+        <Button type="submit" fullWidth variant='contained' size='medium' color="primary">
             Sign In 
         </Button>
          
@@ -50,7 +51,7 @@ const UserForm = ({errors, touched, status}) => {
                 {`Don't have an account? Sign Up`}
               </Link>
             </Grid>
-            </label>
+            </div>
         </Form>
 
       

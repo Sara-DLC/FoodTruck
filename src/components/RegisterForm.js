@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import * as Yup from "yup";
+import './scss/LoginForm.scss';
 import logo from'../img/register.png';
 
 
@@ -49,7 +50,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
             </Field>
             {touched.options && errors.options && <p className="error">{errors.options}</p>}
 
-       <label className ='sign-In'>
+       <div className ='sign-In'>
         <Button type="submit" fullWidth variant="contained" color="primary">
             Register
         </Button>
@@ -59,7 +60,7 @@ const RegisterForm = ({errors, touched, values, status}) => {
                 {"Already have an account? Login"}
               </Link>
             </Grid>
-            </label>
+            </div>
         </Form>
 
 <label>

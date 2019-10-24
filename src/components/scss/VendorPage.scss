@@ -1,0 +1,25 @@
+.vendor-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.trucks-owned {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.create-truck {
+    margin-top: 20px;
+    height: 40px;
+    width: 150px;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-left: 10vw;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ffc107;
+    }
+}
