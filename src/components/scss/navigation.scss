@@ -40,13 +40,22 @@
     }
   }
   @media (max-width: 500px) {
+    header{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;      
+      img{
+        width: 68%;
+      }
+    }
     header nav {
       flex-direction: column;
       text-align: center;
       a {
         border-bottom: 2px solid #ffc107;
         width: 70vw;
-        font-size: 1rem;
+        font-size: 1.8rem;
         padding: 20px 0;
       }
       img {
