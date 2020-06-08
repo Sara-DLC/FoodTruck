@@ -79,11 +79,11 @@ const FormikRegisterForm = withFormik({
 
 
 
-  validationSchema: Yup.object().shape({
-    user: Yup.string().required(),
-    email: Yup.string().required(),
-    options: Yup.string().notOneOf(["Option Required"]).required()
-  }),
+  // validationSchema: Yup.object().shape({
+  //   user: Yup.string().required(),
+  //   email: Yup.string().required(),
+  //   options: Yup.string().notOneOf(["Option Required"]).required()
+  // }),
 
 
 
