@@ -27,7 +27,7 @@
 
     }
       img{
-        width: 50vw;
+        width: 73vw;
       }
     }
 
@@ -73,11 +73,12 @@
       font-size: .5rem;
     }
   }
-// 1000 breakpoint ---------------------------START LAPTOP/DESKTOP---------------------->
-  @media (min-width: 1000px) {
+
+// // 1200 breakpoint ---------------------------START LAPTOP/DESKTOP---------------------->
+  @media (max-width: 1224px) {
     .main{
       width: 100vw;
-      height: 85vh;
+      height: 90vh;
       display:flex;
       flex-direction: column-reverse;
       justify-content: center;

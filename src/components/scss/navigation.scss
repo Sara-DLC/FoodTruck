@@ -33,6 +33,30 @@
   header img {
     height: 50px;
   }
+  @media (max-width: 1224px) {
+    header img {
+      width: 20%;
+      height: 20%;
+    }
+    header nav {
+      text-align: center;
+      a {
+        width: 10vw;
+        font-size: 1.3rem;
+        padding: 20px 0;
+      }
+    }
+    img{
+      width: 50vw;
+      height: 50vh;
+    }
+    p{
+      text-align: center;
+
+    }
+    
+  }
+
   @media (max-width: 800px) {
     header img {
       width: 30%;
