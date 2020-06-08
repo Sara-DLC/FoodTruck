@@ -10,20 +10,6 @@
     a {
       cursor: pointer;
     }
-
-  }
-  header img {
-    height: 50px;
-  }
-  @media (max-width: 800px) {
-    header img {
-      margin-bottom: 20px;
-    }
-  }
-  @media (max-width: 500px) {
-    header img {
-      margin-bottom: unset;
-    }
   }
   header nav {
     display: flex;
@@ -43,22 +29,28 @@
   header nav a:focus {
     color: #ffc107;
   }
-  @media (max-width: 500px) {
-    header nav a {
-      border-bottom: 2px solid #ffc107;
-      width: 70vw;
-      font-size: 1rem;
-      padding: 20px 0;
+  
+  header img {
+    height: 50px;
+  }
+  @media (max-width: 800px) {
+    header img {
+      width: 30%;
+      height: 20%;
     }
   }
   @media (max-width: 500px) {
     header nav {
       flex-direction: column;
       text-align: center;
-    }
-  }
-  @media (max-width: 800px) {
-    header {
-      flex-direction: column;
+      a {
+        border-bottom: 2px solid #ffc107;
+        width: 70vw;
+        font-size: 1rem;
+        padding: 20px 0;
+      }
+      img {
+        margin-bottom: unset;
+      }
     }
   }
