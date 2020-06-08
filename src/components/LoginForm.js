@@ -48,8 +48,9 @@ const UserForm = ({ errors, touched }) => {
           </div>
         </Form>
 
-
+        
       </div>
+      <p>© 2019 FOOD TRUCK TRACKR. ALL RIGHTS RESERVED.</p>
     </div>
 
 
